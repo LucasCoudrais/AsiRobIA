@@ -44,12 +44,16 @@ Voir les fichiers `client_UDP.py` et `server_UDP.py` dans le dossier `sporadique
 ![Client server UDP](img/client_server_UDP_sporadique.png)
 ## Transmision TCP
 Voir les fichiers `client_TCP.py` et `server_TCP.py` dans le dossier `sporadique`
-![Client server UDP](img/client_server_TCP_sporadique.png)
+![Client server TCP](img/client_server_TCP_sporadique.png)
 
 # Transmission flux d'information
 Envoie de manière constante et rapidement des informations, le but étant que tout transite au mieux
 ## Transmision UDP
+Voir les fichiers `client_UDP.py` et `server_UDP.py` dans le dossier `flux`
+![Client server UDP](img/client_server_UDP_flux.png)
 ## Transmision TCP
+Voir les fichiers `client_TCP.py` et `server_TCP.py` dans le dossier `flux`
+![Client server TCP](img/client_server_TCP_flux.png)
 
 ## Sources 
 - Doc UPD TCP : 
