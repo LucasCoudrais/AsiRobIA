@@ -5,6 +5,7 @@ import curses
 def make_request(stdscr):
     urlSensors = "http://127.0.0.1:5000/tempSensors"
     urlProximitySensors = "http://127.0.0.1:5000/proximitySensors"
+    urlInteruptors = "http://127.0.0.1:5000/interuptors"
 
     # Configuration de la fenêtre curses
     curses.curs_set(0)  # Masquer le curseur
@@ -21,6 +22,10 @@ def make_request(stdscr):
         # Effectuer la requête HTTP
         responseProximitySensors = requests.get(urlProximitySensors)
         dataProximitySensors = responseProximitySensors.json()
+        
+        # Effectuer la requête HTTP
+        responseInteruptors = requests.get(urlInteruptors)
+        dataInteruptors = responseInteruptors.json()
 
         # Afficher les résultats dans l'interface curses
         height, width = stdscr.getmaxyx()
@@ -42,6 +47,19 @@ def make_request(stdscr):
                 output = f"{name} : Oui"
             else: 
                 output = f"{name} : Non"
+
+            stdscr.addstr(y, 2, output)
+            y += 1
+            
+        y += 1
+          
+        for item in dataInteruptors:
+            name = item['name']
+            presence = item['isOn']
+            if(presence): 
+                output = f"{name} : Allumé"
+            else: 
+                output = f"{name} : Eteint"
 
             stdscr.addstr(y, 2, output)
             y += 1

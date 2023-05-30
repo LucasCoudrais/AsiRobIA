@@ -8,7 +8,6 @@ def send_sensor_update():
     headers = {"Content-Type": "application/json;charset=UTF-8"}
 
     while True:
-        temperature1 = random.randint(0, 100)
         datas = [
         {
             "id": 1,

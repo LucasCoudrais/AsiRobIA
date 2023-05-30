@@ -40,6 +40,7 @@ Pour respecter le cahier des charges nous avons d'abord imaginer un fonctionneme
 - - - Envoie toutes les 10 secondes une mise à jour pour 2 capteurs dans l'api 
 - - client
 - - - Demande régulièrement la température des capteurs et les affiche (ces températures seront donc mise à jour par le capteur simu)
+Puis nous implémenterons d'autre comportement dans la même idée
 
 ## Implémentatoin du fonctionnement basique 
 - Lancement de l'api en lançcant la commande `python3 app.py`, inaller au préalable flask avec la commande `pip3 install flask`
@@ -50,11 +51,14 @@ Pour respecter le cahier des charges nous avons d'abord imaginer un fonctionneme
  ```
  afin de mettre à jour la température du capteur 2 
 - Vérifier que la mise à jour est bonne en retournant sur l'URL `http://127.0.0.1:5000/sensors`
-## Lancement du système
+## Lancement du système de base de capteur de température (Remonté information contrôle)
 On peut donc lancer le fichier `app.py` afin de lancer notre api et la rendre accessible \
 Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` pour avoir le résultat suivant : 
 ![base système](img/vidéo-system-base-api.gif)
 
 ## Evolution et ajout des autres comportements
-### Ajout des capteurs de proximité 
+### Ajout des capteurs de proximité (Remonté information contrôle)
 ![Capteurs proxy](img/vidéov2.gif)
+### Evolution pour découper en Controller, Service, Repository
+### Ajout d'un interupteur (Remonté d’information sporadique)
+![Interupteur](img/video_interupteur.gif)
