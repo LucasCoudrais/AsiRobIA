@@ -61,3 +61,4 @@ Voir les fichiers `client_TCP.py` et `server_TCP.py` dans le dossier `flux`
 - - https://ipcisco.com/lesson/tcp-versus-udp/
 - Client Sever UDP python : https://pythontic.com/modules/socket/udp-client-server-example
 - Client Server TCP python : https://realpython.com/python-sockets/#tcp-sockets
+- Stream video : https://pyshine.com/Send-video-over-UDP-socket-in-Python/
