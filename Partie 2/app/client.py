@@ -1,0 +1,60 @@
+import requests
+import time
+import curses
+
+def make_request(stdscr):
+    urlSensors = "http://127.0.0.1:5000/sensors"
+    urlProximitySensors = "http://127.0.0.1:5000/proximitySensors"
+
+    # Configuration de la fenêtre curses
+    curses.curs_set(0)  # Masquer le curseur
+    stdscr.nodelay(1)  # Mode non bloquant pour la lecture de l'entrée
+
+    # Boucle principale
+    while True:
+        stdscr.clear()  # Effacer l'écran
+
+        # Effectuer la requête HTTP
+        responseSensors = requests.get(urlSensors)
+        dataSensors = responseSensors.json()
+        
+        # Effectuer la requête HTTP
+        responseProximitySensors = requests.get(urlProximitySensors)
+        dataProximitySensors = responseProximitySensors.json()
+
+        # Afficher les résultats dans l'interface curses
+        height, width = stdscr.getmaxyx()
+        y = 1
+
+        for item in dataSensors:
+            name = item['name']
+            temp = item['temp']
+            output = f"{name} : {temp} °C"
+            stdscr.addstr(y, 2, output)
+            y += 1
+            
+        y += 1
+          
+        for item in dataProximitySensors:
+            name = item['name']
+            presence = item['presence']
+            if(presence): 
+                output = f"{name} : Oui"
+            else: 
+                output = f"{name} : Non"
+
+            stdscr.addstr(y, 2, output)
+            y += 1
+        
+
+        stdscr.refresh()  # Rafraîchir l'écran
+
+        # Lire l'entrée utilisateur
+        key = stdscr.getch()
+        if key == ord('q'):
+            break
+
+        time.sleep(5)  # Attendre 5 secondes avant la prochaine requête
+
+# Appel de la fonction principale avec curses
+curses.wrapper(make_request)
