@@ -25,6 +25,7 @@
 - Un fichier .json par entité, il sera possible de faire des opérations CRUD dessus
 - Des méthodes et des routes pour chaques opérations CRUD 
 - Deux méthodes pour chaque entié, une permettant de lire le fichier de stockage de l'entité et une permettant d'écrire
+- Notre API suivra un modèle Controller Service et Repository afin de séparer les roles et pouvoir mieux comprendre ce qu'il se passe (debug plus simple par exemple)
 ## Fonctionnement 
 Pour respecter le cahier des charges nous avons d'abord imaginer un fonctionnement basique suivant : 
 - API avec un entité capteur qui comme propriété 
