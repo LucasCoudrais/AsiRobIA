@@ -3,7 +3,7 @@ import time
 import curses
 
 def make_request(stdscr):
-    urlSensors = "http://127.0.0.1:5000/sensors"
+    urlSensors = "http://127.0.0.1:5000/tempSensors"
     urlProximitySensors = "http://127.0.0.1:5000/proximitySensors"
 
     # Configuration de la fenêtre curses
@@ -54,7 +54,7 @@ def make_request(stdscr):
         if key == ord('q'):
             break
 
-        time.sleep(5)  # Attendre 5 secondes avant la prochaine requête
+        time.sleep(0.5)  # Attendre 5 secondes avant la prochaine requête
 
 # Appel de la fonction principale avec curses
 curses.wrapper(make_request)

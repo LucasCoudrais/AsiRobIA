@@ -4,8 +4,8 @@ import random
 import time
 
 def send_sensor_update():
-    url1 = "http://localhost:5000/sensors/1"
-    url2 = "http://localhost:5000/sensors/2"
+    url1 = "http://localhost:5000/tempSensor/1"
+    url2 = "http://localhost:5000/tempSensor/2"
     headers = {"Content-Type": "application/json;charset=UTF-8"}
 
     while True:
@@ -13,12 +13,12 @@ def send_sensor_update():
         temperature2 = random.randint(0, 100)
         data1 = {
             "id": 1,
-            "name": "Capteur chambre",
+            "name": "Capteur température chambre",
             "temp": temperature1
         }
         data2 = {
             "id": 2,
-            "name": "Capteur séjour",
+            "name": "Capteur température séjour",
             "temp": temperature2
         }
         payload1 = json.dumps(data1)

@@ -4,7 +4,7 @@ import random
 import time
 
 def send_sensor_update():
-    url = "http://localhost:5000/proximitySensors/"
+    url = "http://localhost:5000/proximitySensor/"
     headers = {"Content-Type": "application/json;charset=UTF-8"}
 
     while True:
