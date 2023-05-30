@@ -60,5 +60,6 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 ### Ajout des capteurs de proximité (Remonté information contrôle)
 ![Capteurs proxy](img/vidéov2.gif)
 ### Evolution pour découper en Controller, Service, Repository
+![découpage](img/archi-bien.png)
 ### Ajout d'un interupteur (Remonté d’information sporadique)
 ![Interupteur](img/video_interupteur.gif)
