@@ -40,9 +40,17 @@ Pour respecter le cahier des charges nous avons d'abord imaginer un fonctionneme
 - - clientSimulateur 
 - - - Demande régulièrement la température des capteurs et les affiche (ces températures seront donc mise à jour par le capteur simu)
 
-## 1ère version
+## Implémentatoin du fonctionnement basique 
 - Lancement de l'api en lançcant la commande `python3 app.py`, inaller au préalable flask avec la commande `pip3 install flask`
 - Aller sur l'URL `http://127.0.0.1:5000/sensors`
-- Lancer la commande ` curl -X PUT -H "Content-Type: application/json" -d '{"id":2, "name":"Capteur séjour","temp":35}' http://localhost:5000/sensors/2` afin de mettre à jour la température du capteur 2 
+- Lancer la commande 
+``` bash
+ curl -X PUT -H "Content-Type: application/json" -d '{"id":2, "name":"Capteur séjour","temp":35}' http://localhost:5000/sensors/2
+ ```
+ afin de mettre à jour la température du capteur 2 
 - Vérifier que la mise à jour est bonne en retournant sur l'URL `http://127.0.0.1:5000/sensors`
+## Lancement du système
+On peut donc lancer le fichier `app.py` afin de lancer notre api et la rendre accessible \
+Il faut ensuite lancer en parallèle les fichier `clientSimulator` et `sensorSimulator` pour avoir le résultat suivant : 
+![Client server UDP](img/api-sensor.png)
 
