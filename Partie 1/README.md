@@ -55,6 +55,12 @@ Voir les fichiers `client_UDP.py` et `server_UDP.py` dans le dossier `flux`
 Voir les fichiers `client_TCP.py` et `server_TCP.py` dans le dossier `flux`
 ![Client server TCP](img/client_server_TCP_flux.png)
 
+# Transmission flux stream video
+Envoie de manière constante les images d'une vidéo de manière à la diffuser en streaming du serveur vers le client.
+## Transmision UDP
+Voir les fichiers `client_UDP.py` et `server_UDP.py` dans le dossier `stream-video`
+![Client server stream video](img/stream-video.png)
+
 ## Sources 
 - Doc UPD TCP : 
 - - https://www.avast.com/fr-fr/c-tcp-vs-udp-difference
