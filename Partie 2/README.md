@@ -18,3 +18,31 @@
 - - Les services tiers reçoivent les requêtes, effectuent les opérations demandées et renvoient les résultats à l'application Python.
 - **Échange de données entre différents composants d'une application web** : 
 - - Différents composants d'une application web Python communiquent entre eux via des requêtes HTTP/HTTPS.
+
+# API Flask
+## Architecture 
+- API basique pytohn flask, nous la rendront statefull avec unstockage dans un système de fichier JSON
+- Un fichier .json par entité, il sera possible de faire des opérations CRUD dessus
+- Des méthodes et des routes pour chaques opérations CRUD 
+- Deux méthodes pour chaque entié, une permettant de lire le fichier de stockage de l'entité et une permettant d'écrire
+## Fonctionnement 
+Pour respecter le cahier des charges nous avons d'abord imaginer un fonctionnement basique suivant : 
+- API avec un entité capteur qui comme propriété 
+- - id 
+- - name
+- - temp
+- 2 méthodes mises a disposition 
+- - getAllCapteur
+- - updateCapteur
+- 2 agents externes à l'api
+- - capteurSimulateur 
+- - - Envoie toutes les 10 secondes une mise à jour pour 2 capteurs dans l'api 
+- - clientSimulateur 
+- - - Demande régulièrement la température des capteurs et les affiche (ces températures seront donc mise à jour par le capteur simu)
+
+## 1ère version
+- Lancement de l'api en lançcant la commande `python3 app.py`, inaller au préalable flask avec la commande `pip3 install flask`
+- Aller sur l'URL `http://127.0.0.1:5000/sensors`
+- Lancer la commande ` curl -X PUT -H "Content-Type: application/json" -d '{"id":2, "name":"Capteur séjour","temp":35}' http://localhost:5000/sensors/2` afin de mettre à jour la température du capteur 2 
+- Vérifier que la mise à jour est bonne en retournant sur l'URL `http://127.0.0.1:5000/sensors`
+

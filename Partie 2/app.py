@@ -3,32 +3,38 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/hello', methods=['GET'])
+@app.route('/', methods=['GET'])
 def hello():
-    message = {'message': 'Hello, World!'}
+    message = {'message': 'Bienvenue !'}
     return jsonify(message)
 
-@app.route('/users', methods=['GET'])
-def get_users():
-    users = read_users()
-    return jsonify(users)
+@app.route('/sensors', methods=['GET'])
+def get_sensors():
+    sensors = read_sensors()
+    return jsonify(sensors)
 
-@app.route('/users', methods=['POST'])
-def add_user():
-    user = request.get_json()
-    users = read_users()
-    users.append(user)
-    write_users(users)
-    return jsonify(user), 201
+@app.route('/sensors/<int:sensor_id>', methods=['PUT'])
+def update_sensor(sensor_id):
+    updated_sensor = request.get_json()
+    sensors = read_sensors()
 
-def read_users():
-    with open('data/users.json', 'r') as file:
-        users = json.load(file)
-    return users
+    for sensor in sensors:
+        if sensor['id'] == sensor_id:
+            sensor.update(updated_sensor)
+            write_sensors(sensors)
+            return jsonify(sensor), 200
+    
+    return jsonify({'message': 'Capteur non trouvé'}), 404
 
-def write_users(users):
-    with open('data/users.json', 'w') as file:
-        json.dump(users, file)
+
+def read_sensors():
+    with open('data/sensors.json', 'r') as file:
+        sensors = json.load(file)
+    return sensors
+
+def write_sensors(sensors):
+    with open('data/sensors.json', 'w') as file:
+        json.dump(sensors, file)
 
 if __name__ == '__main__':
     app.run()
