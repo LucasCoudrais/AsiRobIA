@@ -1,4 +1,6 @@
 import cv2
+import os
+os.environ["PYGLET_AUDIO_DRIVER"] = "silent"
 
 # URL de l'API de streaming vidéo
 url = 'http://localhost:5000/streamCamera'
