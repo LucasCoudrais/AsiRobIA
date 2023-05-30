@@ -59,6 +59,7 @@ Voir les fichiers `client_TCP.py` et `server_TCP.py` dans le dossier `flux`
 Envoie de manière constante les images d'une vidéo de manière à la diffuser en streaming du serveur vers le client.
 ## Transmision UDP
 Voir les fichiers `client_UDP.py` et `server_UDP.py` dans le dossier `stream-video`
+Nous avonsun petit bug car nous n'avons pas le module `canberra-gtk-module`. Pas le temps de l'installer sur une VM.
 ![Client server stream video](img/stream-video.png)
 
 ## Sources 
