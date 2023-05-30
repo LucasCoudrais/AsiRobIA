@@ -2,14 +2,12 @@ from flask import Flask, request, jsonify, Response
 from controllers.tempController import TempController
 from controllers.proximityController import ProximityController
 from controllers.interuptorController import InteruptorController
-from controllers.streamController import StreamController
 
 app = Flask(__name__)
 
 temp_controller = TempController()
 proximity_controller = ProximityController()
 interuptor_controller = InteruptorController()
-stream_controller = StreamController()
 
 @app.route('/', methods=['GET'])
 def hello():
