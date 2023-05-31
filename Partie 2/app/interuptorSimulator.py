@@ -31,7 +31,7 @@ def send_sensor_update():
                     "isOn": False
                 }
                 payload = json.dumps(data)
-                response = requests.put(url, headers=headers, data=payload)
+                response = requests.put(url+str(nbInteruptor), headers=headers, data=payload)
                 print("Code de statut de la réponse : ", response.status_code)
             else :
                 print("Valeur entrée incorrecte veuillez réssayer.")

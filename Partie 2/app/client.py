@@ -81,8 +81,10 @@ def make_request(stdscr):
             img = cv2.imdecode(arr, -1) # 'Load it as it is'
             imS = cv2.resize(img, (600, 400))                # Resize image
             cv2.imshow(item['name'], img)
-            if cv2.waitKey() & 0xff == 27: quit()
-        
+            cv2.waitKey(500) # on attend 5 secondes
+            # cv2.destroyAllWindows()
+
+                  
             name = item['name']
             url = item['url']
             output = f"{name}, URL : {url}"
@@ -98,8 +100,6 @@ def make_request(stdscr):
         key = stdscr.getch()
         if key == ord('q'):
             break
-
-        time.sleep(0.5)  # Attendre 5 secondes avant la prochaine requête
 
 # Appel de la fonction principale avec curses
 curses.wrapper(make_request)
