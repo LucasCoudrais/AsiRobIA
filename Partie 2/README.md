@@ -61,5 +61,18 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 ![Capteurs proxy](img/vidéov2.gif)
 ### Evolution pour découper en Controller, Service, Repository
 ![découpage](img/archi-bien.png)
-### Ajout d'un interupteur (Remonté d’information sporadique)
+### Ajout de 10 interupteur en mode tout ou rien (Remonté d’information sporadique)
 ![Interupteur](img/video_interupteur.gif)
+### Ajout d'un flux vidéo (Remontée de flux d’information)
+- Par soucis de simplification nous avons mis en place le système suivant:  
+- - API lit un fichier vidéo et envoie un flux video en streming à travers une méthode
+- - Un client spécifique qui appelle la méthode et affiche le flux vidéo avec open cv
+- - Possibilité également de lire le flux vidéo à travers l'url de la méthode dans un lecteur de vidéo approprié (exemple VLC)
+- Nous aurions aimé avoir le comportement suivant :
+- - cameraSimulator qui lit le fichier vidéo et envoie un flux vidéo en streaming vidéo dans une méthode de l'API. 
+- - l'API stocke temporairement ce flux et le met a disposition sur une méthode 
+- - même comportement pour les client / réception de la vidéo
+### Ajout d'image de la caméra
+- On à un camera simulateur qui envoie de manière sporadique une image sous forme d'URL
+- L'API stocke cette URL et la met à disposition afin d'avoir en temps réel l'image de la caméra de surveillance
+
