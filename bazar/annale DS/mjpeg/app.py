@@ -4,7 +4,7 @@ import cv2
 app = Flask(__name__)
 
 def generate_frames():
-    video_path = "video.mp4"  # Spécifiez le chemin vers votre vidéo
+    video_path = "../video.mp4"  # Spécifiez le chemin vers votre vidéo
 
     cap = cv2.VideoCapture(video_path)
 
