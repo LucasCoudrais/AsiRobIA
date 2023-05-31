@@ -1,6 +1,9 @@
 import requests
 import time
 import curses
+import cv2
+import urllib.request
+import numpy as np
 
 def make_request(stdscr):
     urlSensors = "http://127.0.0.1:5000/tempSensors"
@@ -72,6 +75,14 @@ def make_request(stdscr):
         y += 1
           
         for item in dataImgCamera:
+            
+            req = urllib.request.urlopen(item['url'])
+            arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+            img = cv2.imdecode(arr, -1) # 'Load it as it is'
+            imS = cv2.resize(img, (600, 400))                # Resize image
+            cv2.imshow(item['name'], img)
+            if cv2.waitKey() & 0xff == 27: quit()
+        
             name = item['name']
             url = item['url']
             output = f"{name}, URL : {url}"
