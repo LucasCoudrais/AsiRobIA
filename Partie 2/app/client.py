@@ -80,7 +80,7 @@ def make_request(stdscr):
             arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
             img = cv2.imdecode(arr, -1) # 'Load it as it is'
             imS = cv2.resize(img, (600, 400))                # Resize image
-            cv2.imshow(item['name'], img)
+            cv2.imshow(item['name'], imS)
             cv2.waitKey(500) # on attend 5 secondes
             # cv2.destroyAllWindows()
 
