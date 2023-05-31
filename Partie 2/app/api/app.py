@@ -2,12 +2,14 @@ from flask import Flask, request, jsonify, Response
 from controllers.tempController import TempController
 from controllers.proximityController import ProximityController
 from controllers.interuptorController import InteruptorController
+from controllers.cameraController import CameraController
 
 app = Flask(__name__)
 
 temp_controller = TempController()
 proximity_controller = ProximityController()
 interuptor_controller = InteruptorController()
+camera_controller = CameraController()
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -59,6 +61,15 @@ def stream_camera():
                 yield video_data
 
     return Response(generate(), mimetype='video/mp4')
+
+@app.route('/imageCameras', methods=['GET'])
+def get_imageCam():
+    return camera_controller.get_imageCam()
+
+@app.route('/imageCamera/<int:imageCam_id>', methods=['PUT'])
+def update_imageCam(imageCam_id):
+    return camera_controller.update_imageCam(imageCam_id, request)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

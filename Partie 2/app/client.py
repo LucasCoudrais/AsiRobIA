@@ -6,6 +6,7 @@ def make_request(stdscr):
     urlSensors = "http://127.0.0.1:5000/tempSensors"
     urlProximitySensors = "http://127.0.0.1:5000/proximitySensors"
     urlInteruptors = "http://127.0.0.1:5000/interuptors"
+    urlimgCamera = "http://127.0.0.1:5000/imageCameras"
 
     # Configuration de la fenêtre curses
     curses.curs_set(0)  # Masquer le curseur
@@ -26,6 +27,10 @@ def make_request(stdscr):
         # Effectuer la requête HTTP
         responseInteruptors = requests.get(urlInteruptors)
         dataInteruptors = responseInteruptors.json()
+        
+        # Effectuer la requête HTTP
+        responseImgCamera = requests.get(urlimgCamera)
+        dataImgCamera = responseImgCamera.json()
 
         # Afficher les résultats dans l'interface curses
         height, width = stdscr.getmaxyx()
@@ -60,6 +65,17 @@ def make_request(stdscr):
                 output = f"{name} : Allumé"
             else: 
                 output = f"{name} : Eteint"
+
+            stdscr.addstr(y, 2, output)
+            y += 1
+            
+        y += 1
+          
+        for item in dataImgCamera:
+            name = item['name']
+            url = item['url']
+            output = f"{name}, URL : {url}"
+
 
             stdscr.addstr(y, 2, output)
             y += 1
