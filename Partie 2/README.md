@@ -86,4 +86,21 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 - L'API stocke cette URL et la met à disposition afin d'avoir en temps réel l'image de la caméra de surveillance
 - Cette URL est généré par un hébergeur externe dans lequel nous avons uploader notre fichier qui se trouve en local. Cet hébergeur nous a ensuite renvoyé l'url pour qu'on y accède.
 
+## Comparaison entre flask et bottle,  jango, web2p
+|                  | Flask                                      | Bottle                                   | Django                                   | Web2Py                                   |
+|------------------|--------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
+| Langage          | Python                                     | Python                                   | Python                                   | Python                                   |
+| Taille du code   | Léger et minimaliste                        | Léger et minimaliste                     | Complexe et robuste                       | Complexe et robuste                       |
+| Routing          | Flexible et personnalisable                 | Simple et direct                         | Conventionnel et puissant                 | Conventionnel et puissant                 |
+| Templating       | Jinja2                                     | Simple et basique                        | Puissant et intégré                       | Puissant et intégré                       |
+| Base de données  | Supporte plusieurs bases de données         | Supporte plusieurs bases de données      | Supporte plusieurs bases de données       | Supporte plusieurs bases de données       |
+| ORM intégré      | Non                                        | Non                                      | Oui                                      | Oui                                      |
+| Sécurité         | Fonctionnalités de base                     | Fonctionnalités de base                  | Puissante et intégrée                     | Puissante et intégrée                     |
+| Écosystème       | Vaste et actif                              | Petit mais en croissance                  | Vaste et mature                           | Vaste et mature                           |
+| Scalabilité      | Convient aux petites et moyennes applications | Convient aux petites et moyennes applications | Convient aux grandes applications         | Convient aux grandes applications         |
 
+Note : Les informations ci-dessus sont des généralisations et peuvent varier en fonction de la version spécifique de chaque framework. Chaque framework a ses propres forces et faiblesses, et le choix dépend des besoins spécifiques du projet.
+
+# Partie 2 bis 
+
+# Partie 2 ter
