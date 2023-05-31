@@ -17,7 +17,7 @@ def upload_image(image_path):
       return None
 
 # Exemple d'utilisation
-image_path = "elephant.jpg"  # Spécifiez le chemin vers votre image
+image_path = "img/elephant.jpg"  # Spécifiez le chemin vers votre image
 uploaded_url = upload_image(image_path)
 
 if uploaded_url:

@@ -3,6 +3,7 @@ from controllers.tempController import TempController
 from controllers.proximityController import ProximityController
 from controllers.interuptorController import InteruptorController
 from controllers.cameraController import CameraController
+from controllers.generatedCameraController import GeneratedCameraController
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ temp_controller = TempController()
 proximity_controller = ProximityController()
 interuptor_controller = InteruptorController()
 camera_controller = CameraController()
+generatedCamera_controller = GeneratedCameraController()
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -62,6 +64,8 @@ def stream_camera():
 
     return Response(generate(), mimetype='video/mp4')
 
+
+
 @app.route('/imageCameras', methods=['GET'])
 def get_imageCam():
     return camera_controller.get_imageCam()
@@ -69,6 +73,15 @@ def get_imageCam():
 @app.route('/imageCamera/<int:imageCam_id>', methods=['PUT'])
 def update_imageCam(imageCam_id):
     return camera_controller.update_imageCam(imageCam_id, request)
+
+
+@app.route('/imageGeneratedCameras', methods=['GET'])
+def get_imageGeneratedCam():
+    return generatedCamera_controller.get_imageGeneratedCam()
+
+@app.route('/imageGeneratedCamera/<int:imageGeneratedCam_id>', methods=['PUT'])
+def update_imageGeneratedCam(imageGeneratedCam_id):
+    return generatedCamera_controller.update_imageGeneratedCam(imageGeneratedCam_id, request)
 
 
 if __name__ == '__main__':
