@@ -100,13 +100,13 @@ def make_request(stdscr):
           
         for item in dataImgGeneratedCamera:
             
-            # req = urllib.request.urlopen(item['url'])
-            # arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
-            # img = cv2.imdecode(arr, -1) # 'Load it as it is'
-            # imS = cv2.resize(img, (600, 400))                # Resize image
-            # cv2.imshow(item['name'], imS)
-            # cv2.waitKey(500) # on attend 0.5 secondes
-            # # cv2.destroyAllWindows()
+            req = urllib.request.urlopen(item['url'])
+            arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+            img = cv2.imdecode(arr, -1) # 'Load it as it is'
+            imS = cv2.resize(img, (600, 400))                # Resize image
+            cv2.imshow(item['name'], imS)
+            cv2.waitKey(500) # on attend 0.5 secondes
+            # cv2.destroyAllWindows()
                   
             name = item['name']
             url = item['url']

@@ -79,6 +79,7 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 - On à un camera simulateur qui envoie de manière sporadique une image sous forme d'URL
 - L'API stocke cette URL et la met à disposition afin d'avoir en temps réel l'image de la caméra de surveillance
 - Cette URL est une url publique deja hébergé 
+- Le client affiche l'image et se recharge régulièrement pour afficher une image différentes si on change d'image et recharge aussi toutes ses autres infos
 
 ### Ajout d'image de la caméra par url généré à partir e fichiers locaux
 ![Stream](img/camera_generated_url.gif)
@@ -86,6 +87,15 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 - L'API stocke cette URL et la met à disposition afin d'avoir en temps réel l'image de la caméra de surveillance
 - Cette URL est généré par un hébergeur externe dans lequel nous avons uploader notre fichier qui se trouve en local. Cet hébergeur nous a ensuite renvoyé l'url pour qu'on y accède.
 
+### Flux mjpg avec traitement avant envoie de chaque image du flux
+![Stream](img/stream_traitement.gif)
+- API transforme une vidéo qu'elle a en local et la transforme en flux
+- Avant d'envoyer chaque images du flux aplique un traitement (detection de visage ou filtre)
+- Récupération et affichage d 2 filtres différents sur une page web
+
+## Fonctionnement final
+![Stream](img/final.gif)
+(Scéma archi à venir)
 ## Comparaison entre flask et bottle,  jango, web2p
 |                  | Flask                                      | Bottle                                   | Django                                   | Web2Py                                   |
 |------------------|--------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
