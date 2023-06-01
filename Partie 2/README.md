@@ -111,7 +111,6 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 | Écosystème       | Vaste et actif                              | Petit mais en croissance                  | Vaste et mature                           | Vaste et mature                           |
 | Scalabilité      | Convient aux petites et moyennes applications | Convient aux petites et moyennes applications | Convient aux grandes applications         | Convient aux grandes applications         |
 
-Note : Les informations ci-dessus sont des généralisations et peuvent varier en fonction de la version spécifique de chaque framework. Chaque framework a ses propres forces et faiblesses, et le choix dépend des besoins spécifiques du projet.
 
 # Partie 2 bis 
 
