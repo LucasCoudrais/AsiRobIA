@@ -113,5 +113,15 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 
 
 # Partie 2 bis 
+Nvidia pytriton est un serveur d'inférence optimisé pour les modèles d'apprentissage d'intelligence artificielle. Il permet de déployer et de servir des modèles d'IA entraînés sur des GPU Nvidia. Il propose : 
+- Le déploiement de modèles 
+- Des performances optimisé pour l'IA
+- Gestion des requêtes et de l'équilibrement des charges
+- Support pour des fonctions avancées
 
+Ce service permet de mettre une IA à disposition à travers une API afin que ces traitement soit optimisé et rapide. \
+On pourrait placer par exemple notre morceau de code permettant de faire de la detection de visage sur une image afin de réduire le temps de traitement dans notre API.
 # Partie 2 ter
+Je ne connais pas personnellement de framework tel que flask. Flask me parait assez adapté à notre besoin, il est assez léger documenté et assez flexible. \
+Selon le comparatif que j'ai étudié entre les framework proposé, je pourrais penser que Bottle me parait pertinenet dans le sens ou il semble léger, simple et rapide à implémenter tout comme flask. \
+Pour moi dans le cadre de ce TP et de sa réalisation un outil comme flask ou bottle donc me parait relativement bien adapté dans le sens ou nous cherchons quelque chose de simple et rapide a implémenter.
