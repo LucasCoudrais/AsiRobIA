@@ -75,13 +75,15 @@ Il faut ensuite lancer en parallèle les fichier `client` et `sensorSimulator` p
 - - même comportement pour les client / réception de la vidéo 
 
 ### Ajout d'image de la caméra par url existantes
+#### Caméra extérieur
 ![Stream](img/camera_url.gif)
 - On à un camera simulateur qui envoie de manière sporadique une image sous forme d'URL
 - L'API stocke cette URL et la met à disposition afin d'avoir en temps réel l'image de la caméra de surveillance
 - Cette URL est une url publique deja hébergé 
 - Le client affiche l'image et se recharge régulièrement pour afficher une image différentes si on change d'image et recharge aussi toutes ses autres infos
 
-### Ajout d'image de la caméra par url généré à partir e fichiers locaux
+### Ajout d'image de la caméra par url généré à partir de fichiers locaux
+#### Caméra intérieur
 ![Stream](img/camera_generated_url.gif)
 - On à un camera simulateur qui envoie de manière sporadique une image sous forme d'URL
 - L'API stocke cette URL et la met à disposition afin d'avoir en temps réel l'image de la caméra de surveillance
