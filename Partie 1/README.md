@@ -60,7 +60,7 @@ Envoie de manière constante les images d'une vidéo de manière à la diffuser 
 ## Transmision UDP
 Voir les fichiers `client_UDP.py` et `server_UDP.py` dans le dossier `stream-video`
 Nous avonsun petit bug car nous n'avons pas le module `canberra-gtk-module`. Pas le temps de l'installer sur une VM.
-![Client server stream video](img/stream-video.png)
+![Client server stream video](img/stream-video.gif)
 
 ## Sources 
 - Doc UPD TCP : 
